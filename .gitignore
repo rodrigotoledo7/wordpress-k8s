@@ -1,2 +1,37 @@
-wp-content/themes/twentytwentyfive wp-content/themes/twentytwentyfour wp-content/themes/twentytwentythree
-db-data
+# Ignora arquivos de ambiente locais
+.env
+.env.*
+
+# Ignora dados de volume do banco (caso esteja em ./db-data/)
+db-data/
+
+# Ignora diretórios padrão de cache do WordPress
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+
+# Ignora temas que não são o personalizado
+wp-content/themes/*
+!wp-content/themes/astra*/
+
+# Ignora plugins (caso você não esteja versionando nenhum)
+wp-content/plugins/*
+!wp-content/plugins/meu-plugin-personalizado/
+
+# Arquivos de sistema
+*.log
+*.sql
+*.tar
+*.zip
+*.gz
+
+# Ignore arquivos temporários do sistema operacional/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+*.idea/
+.vscode/
+node_modules/
