@@ -1,0 +1,23 @@
+# Ignora uploads e arquivos temporários do WordPress
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# Ignora arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignora arquivos temporários de edição
+*.swp
+*.swo
+
+# Ignora arquivos de log
+*.log
+
+# Docker
+.env
+docker-compose.override.yml
+
+# Arquivos kubeconfig (se por acaso copiar localmente)
+kubeconfig
+wp-content/themes/twentytwentyfive wp-content/themes/twentytwentyfour wp-content/themes/twentytwentythree
