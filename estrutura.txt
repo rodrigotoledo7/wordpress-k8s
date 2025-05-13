@@ -1,0 +1,9 @@
+.
+├── deployment.yaml
+├── docker-compose.yaml
+├── Dockerfile
+├── estrutura.txt
+└── wp-content
+    ├── plugins
+    └── themes
+        └── astra
