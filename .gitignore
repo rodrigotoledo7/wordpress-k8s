@@ -1,25 +1,37 @@
-# Ignora uploads e arquivos temporários do WordPress
-wp-content/uploads/
+# Ignora arquivos de ambiente locais
+.env
+.env.*
+
+# Ignora dados de volume do banco (caso esteja em ./db-data/)
+db-data/
+
+# Ignora diretórios padrão de cache do WordPress
 wp-content/cache/
 wp-content/upgrade/
+wp-content/uploads/
 
-# Ignora arquivos de sistema
+# Ignora temas que não são o personalizado
+wp-content/themes/*
+!wp-content/themes/astra*/
+
+# Ignora plugins (caso você não esteja versionando nenhum)
+wp-content/plugins/*
+!wp-content/plugins/meu-plugin-personalizado/
+
+# Arquivos de sistema
+*.log
+*.sql
+*.tar
+*.zip
+*.gz
+
+# Ignore arquivos temporários do sistema operacional/editor
 .DS_Store
 Thumbs.db
-
-# Ignora arquivos temporários de edição
 *.swp
 *.swo
-
-# Ignora arquivos de log
-*.log
-
-# Docker
-.env
-docker-compose.override.yml
-
-# Arquivos kubeconfig (se por acaso copiar localmente)
-kubeconfig
-wp-content/themes/twentytwentyfive
-wp-content/themes/twentytwentyfour
-wp-content/themes/twentytwentythree
+*.bak
+*.tmp
+*.idea/
+.vscode/
+node_modules/

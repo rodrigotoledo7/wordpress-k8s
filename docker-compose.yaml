@@ -1,11 +1,9 @@
-version: '3.9'
-
 services:
   wordpress:
     build: .
-    image: registry.tjro.jus.br/docker-hub/wordpress:latest
+    image: wordpress:latest
     ports:
-      - "8082:80"
+      - "8080:8080"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: wordpress
@@ -15,15 +13,15 @@ services:
       - ./wp-content:/var/www/html/wp-content
 
   db:
-    image: registry.tjro.jus.br/docker-hub/mysql:5.7
+    image: mysql:5.7
     environment:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wp_user
       MYSQL_PASSWORD: wp_pass
       MYSQL_ROOT_PASSWORD: root_pass
     volumes:
-      - db_data:/var/lib/mysql
+      - ./db-data:/var/lib/mysql
 
-volumes:
-  # wp_content:
-  db_data:
+# volumes:
+#   wp_content: ./wp-content
+#   db_data: ./db-data
